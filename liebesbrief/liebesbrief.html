@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Romantischer Liebesbrief</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ffe6e6 0%, #fff0f5 100%);
+    font-family: 'Segoe Script', 'Brush Script MT', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    padding: 20px;
+    position: relative;
+  }
+  .side-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    margin: 0 16px;
+    opacity: 0;
+    transition: opacity 0.8s;
+  }
+  .side-img.visible {
+    opacity: 1;
+  }
+  .love-btn {
+    background: #ff3366;
+    border: none;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    transition: transform 0.2s;
+  }
+  .love-btn:hover {
+    transform: scale(1.08);
+    background: #ff6699;
+  }
+  .love-btn svg {
+    width: 48px;
+    height: 48px;
+    fill: #fff;
+    animation: pulse 1.2s infinite;
+  }
+  @keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.15);}
+    100% { transform: scale(1);}
+  }
+  .letter {
+    background: rgba(255,240,245,0.95);
+    border-radius: 25px;
+    padding: 30px;
+    margin: 20px;
+    font-size: 1.2rem;
+    color: #d72660;
+    text-align: left;
+    line-height: 1.7;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+    font-family: 'Segoe Script', 'Brush Script MT', cursive, sans-serif;
+    display: none;
+    max-width: 500px;
+    position: relative;
+    z-index: 2;
+  }
+  .letter p {
+    margin-bottom: 1em;
+  }
+  .hearts {
+    position: absolute;
+    left: 0; top: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .heart {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    animation: floatUp 3s linear forwards;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(0) scale(1);}
+    80% { opacity: 0.8;}
+    100% { transform: translateY(-180px) scale(1.3); opacity: 0;}
+  }
+  @media (max-width: 700px) {
+    .container { flex-direction: column; }
+    .side-img { width: 90px; height: 90px; margin: 12px 0; }
+    .letter { font-size: 1.05rem; padding: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Linkes Bild -->
+  <img src="links.jpg" alt="Links" class="side-img" id="imgLeft">
+  
+  <!-- Herz-Button und Liebesbrief -->
+  <div id="mainArea">
+    <button class="love-btn" id="showLetterBtn" aria-label="Liebesbrief öffnen">
+      <svg viewBox="0 0 48 48">
+        <path d="M24 42s-1.7-1.6-7.2-6.6C7.6 29.2 2 24.1 2 17.5 2 11.7 6.7 7 12.5 7c3.1 0 6.1 1.5 8 4 1.9-2.5 4.9-4 8-4C41.3 7 46 11.7 46 17.5c0 6.6-5.6 11.7-14.8 17.9C25.7 40.4 24 42 24 42z"/>
+      </svg>
+    </button>
+
+    <div class="letter" id="loveLetter">
+      <p><strong>Mein liebster Schatz,</strong></p>
+      <p>Seitdem ich dich kenne, ist jeder Tag ein echtes Geschenk.<br>
+      Dein Lächeln erhellt meine Welt, und dein Herz macht mein Leben vollkommen.<br>
+      Ich liebe dich mehr, als Worte je ausdrücken könnten.</p>
+      <p>Wir sind nun schon fast drei Monate zusammen, und ich kann kaum in Worte fassen, wie besonders du für mich bist.<br>
+      Ich liebe alles an dir: deine Augen, dein Lächeln, deinen Körper und alles, was dich zu dem wunderbaren Menschen macht, der du bist.</p>
+      <p>Auch wenn wir manchmal kleine Schwierigkeiten haben – sei es wegen dem Zentrum oder wegen kleinerer Streitereien – schaffen wir das gemeinsam und finden immer eine Lösung.<br>
+      Es ist mir egal, was andere denken oder sagen, ich will nur dich. Ich hoffe, wir bleiben für immer so eng verbunden.</p>
+      <p>Selbst wenn ich manchmal Fehler mache, machst du immer das Beste daraus – und genau das liebe ich so sehr an dir.<br>
+      Meine Familie akzeptiert dich, meine Schwester akzeptiert dich, und ich bin sehr froh, dass ihr euch gut versteht.</p>
+      <p>Schatz, du weißt, wenn es dir einmal schlecht geht oder du jemanden zum Reden brauchst, bin ich immer für dich da.<br>
+      Du kannst mich jederzeit anrufen, egal wo ich bin – ich werde immer für dich da sein.</p>
+      <p>Ich wollte dir einfach sagen: Ich liebe dich von ganzem Herzen. ❤️</p>
+      <p>Für immer dein ❤️<br>Dein Celio ❤️</p>
+    </div>
+
+    <div class="hearts" id="hearts"></div>
+  </div>
+  
+  <!-- Rechtes Bild -->
+  <img src="rechts.jpg" alt="Rechts" class="side-img" id="imgRight">
+</div>
+
+<script>
+const btn = document.getElementById('showLetterBtn');
+const letter = document.getElementById('loveLetter');
+const imgLeft = document.getElementById('imgLeft');
+const imgRight = document.getElementById('imgRight');
+const heartsContainer = document.getElementById('hearts');
+
+btn.addEventListener('click', () => {
+  btn.style.display = 'none';
+  letter.style.display = 'block';
+  setTimeout(() => imgLeft.classList.add('visible'), 300);
+  setTimeout(() => imgRight.classList.add('visible'), 300);
+  startHearts();
+});
+
+function startHearts() {
+  const heartColors = ['#ff3366', '#d72660', '#ff6699', '#ffb6c1', '#e75480'];
+  const heartsInterval = setInterval(() => {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    const left = Math.random() * 80 + 10;
+    const delay = Math.random() * 1.5;
+    const color = heartColors[Math.floor(Math.random() * heartColors.length)];
+    heart.style.left = left + '%';
+    heart.style.bottom = '0px';
+    heart.style.animationDelay = delay + 's';
+    heart.innerHTML = `<svg viewBox="0 0 32 32"><path fill="${color}" d="M16 29s-8.5-7.7-12.2-12C1.2 13.2 1 9.7 4.1 7.1c3.1-2.6 7.2-1.1 8.9 1.7C14.8 5.9 18.9 4.5 22 7.1c3.1 2.6 2.9 6.1 0.3 9.9C24.5 21.3 16 29 16 29z"/></svg>`;
+    heartsContainer.appendChild(heart);
+    setTimeout(() => heart.remove(), 3000);
+  }, 500);
+  setTimeout(() => clearInterval(heartsInterval), 6000);
+}
+</script>
+</body>
+</html>
